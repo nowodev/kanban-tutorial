@@ -3,9 +3,7 @@
         <h3 align="center" class="uk-heading-divider">Kanban Board</h3>
         <div class="uk-grid-medium uk-child-width-expand@s uk-text-center" uk-grid>
 
-            <BoardColumn name="Todo" />
-            <BoardColumn name="In Progress" />
-            <BoardColumn name="Done" />
+            <BoardColumn v-for="col in sharedState.Seed" :key="col.id" :col="col" />
         </div>
     </div>
 </template>
@@ -18,7 +16,7 @@ export default {
 
     data() {
         return {
-            state: store.state
+            sharedState: store.state
         }
     },
 
