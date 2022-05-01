@@ -12,8 +12,15 @@
 
 <script>
 import BoardColumn from "./BoardColumn.vue";
+import { store } from "../store.js";
 export default {
     name: "Board",
+
+    data() {
+        return {
+            state: store.state
+        }
+    },
 
     components: { BoardColumn }
 }
